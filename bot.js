@@ -58,7 +58,7 @@ if (message.content.toLowerCase().startsWith(prefix + `new`)) {
         message.channel.send(` ** تم فتح تذكرتك , #${c.name}.** `);
         const embed = new Discord.RichEmbed()
         .setColor(0xCF40FA)
-        .addField(`Hey ${message.author.username}!`, `Please try explain why you opened this ticket with as much detail as possible. Our **Support Team** will be here soon to help.`)
+        .addField(`Hey ${message.author.username}!`, ` ** نرجوآ منكم توضيح مشكلتكم بشكل جيد ، و نرجوآ عدم الإزعأج . إدآرتنا سوف تقوم بمسأعدتكم في أسرع وقت**  `)
         .setTimestamp();
         c.send({ embed: embed });
     }).catch(console.error);
@@ -66,9 +66,9 @@ if (message.content.toLowerCase().startsWith(prefix + `new`)) {
 if (message.content.toLowerCase().startsWith(prefix + `close`)) {
     if (!message.channel.name.startsWith(`ticket-`)) return message.channel.send(`You can't use the close command outside of a ticket channel.`);
 
-    message.channel.send(`Are you sure? Once confirmed, you cannot reverse this action!\nTo confirm, type \`Aconfirm\`. This will time out in 10 seconds and be cancelled.`)
+    message.channel.send(` **هل أنت متأكد من القيآم بهذه العملية ؟ ** \n **لتسكير التذكرة ، قم بكتأبة الامر الآتي ** `` =confirm `` `)
     .then((m) => {
-      message.channel.awaitMessages(response => response.content === 'Aconfirm', {
+      message.channel.awaitMessages(response => response.content === '=confirm', {
         max: 1,
         time: 10000,
         errors: ['time'],
@@ -77,7 +77,7 @@ if (message.content.toLowerCase().startsWith(prefix + `close`)) {
           message.channel.delete();
         })
         .catch(() => {
-          m.edit('Ticket close timed out, the ticket was not closed.').then(m2 => {
+          m.edit(' ** نرجوآ منككم الإسرآع في كتأبه الامر** ``=confrim`` ').then(m2 => {
               m2.delete();
           }, 3000);
         });
