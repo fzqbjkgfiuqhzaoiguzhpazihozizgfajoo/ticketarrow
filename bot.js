@@ -8,7 +8,7 @@ function clean(text) {
         return text;
 }
 
-const prefix = "A";
+const prefix = "=";
 const token = "NTI5Nzg3MTE4NDI0MjkzMzk2.Dw16bQ.L6ZeJHruZ3bIMNhf3hknOK7ePDw";
 
 client.on("ready", () => {
@@ -55,7 +55,7 @@ if (message.content.toLowerCase().startsWith(prefix + `new`)) {
             SEND_MESSAGES: true,
             READ_MESSAGES: true
         });
-        message.channel.send(`:white_check_mark: Your ticket has been created, #${c.name}.`);
+        message.channel.send(` ** تم فتح تذكرتك , #${c.name}.** `);
         const embed = new Discord.RichEmbed()
         .setColor(0xCF40FA)
         .addField(`Hey ${message.author.username}!`, `Please try explain why you opened this ticket with as much detail as possible. Our **Support Team** will be here soon to help.`)
