@@ -8,12 +8,12 @@ function clean(text) {
         return text;
 }
 
-const prefix = "➶";
-const token = "NTI5Nzg3MTE4NDI0MjkzMzk2.Dw16bQ.L6ZeJHruZ3bIMNhf3hknOK7ePDw";
+const prefix = "-";
+const token = "NTU1ODIxOTM4MzY3NTI4OTY1.D2xBMw.7epMwngMhKC8spd5T2C7wsEjk9c";
 
 client.on("ready", () => {
   console.log("Vulnix | Logged in! Server count: ${client.guilds.size}");
-  client.user.setGame(`Support Arrow |${prefix}new`);
+  client.user.setGame(`Support Berlin |${prefix}new`);
 });
 
 
@@ -24,7 +24,7 @@ client.on("message", (message) => {
     const embed = new Discord.RichEmbed()
     .setTitle(`:mailbox_with_mail: Vulnix Help`)
     .setColor(#f784f2)
-    .setDescription(`مرحبآ ، انا رآز ، بوتنأ يحتوي على أكثر من كومند نستعرضها لكم : `)
+    .setDescription(`مرحبآ ، انا رآمي ، بوتنأ يحتوي على أكثر من كومند نستعرضها لكم : `)
     .addField(`التذكرة`[${prefix}new]() > لفتح تذكرة من أجل المسآعددة\n[${prefix}close]() > لغلقق تذكرة مأ فتحتهأ`)
     .addField(`أشيآء أخرى`, `[${prefix}help]() > لرؤية مآ يحتويه البوت من أوآمر`)
     message.channel.send({ embed: embed });
@@ -59,9 +59,9 @@ if (message.content.toLowerCase().startsWith(prefix + `new`)) {
 if (message.content.toLowerCase().startsWith(prefix + `close`)) {
     if (!message.channel.name.startsWith(`ticket-`)) return message.channel.send(`لآ يمكنك تقفيل تذكرة إلآ اذا كنت فيهأ.`);
 
-    message.channel.send(`هل أنت متأكد من تقففيل هذه التذكرة ؟ , إذآ تريد تقفيلها قم بكتآبه الامر الآتي \`➶confirm\` `)
+    message.channel.send(`هل أنت متأكد من تقففيل هذه التذكرة ؟ , إذآ تريد تقفيلها قم بكتآبه الامر الآتي \`-confirm\` `)
     .then((m) => {
-      message.channel.awaitMessages(response => response.content === '➶confirm', {
+      message.channel.awaitMessages(response => response.content === '-confirm', {
         max: 1,
         time: 10000,
         errors: ['time'],
