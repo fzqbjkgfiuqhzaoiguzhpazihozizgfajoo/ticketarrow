@@ -23,7 +23,7 @@ client.on("message", (message) => {
   if (message.content.toLowerCase().startsWith(prefix + `help`)) {
     const embed = new Discord.RichEmbed()
     .setTitle(`:mailbox_with_mail: Vulnix Help`)
-    .setColor(#f784f2)
+    .setColor(d1591b)
     .setDescription(`مرحبآ ، انا رآمي ، بوتنأ يحتوي على أكثر من كومند نستعرضها لكم : `)
     .addField(`التذكرة`[${prefix}new]() > لفتح تذكرة من أجل المسآعددة\n[${prefix}close]() > لغلقق تذكرة مأ فتحتهأ`)
     .addField(`أشيآء أخرى`, `[${prefix}help]() > لرؤية مآ يحتويه البوت من أوآمر`)
